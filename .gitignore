@@ -125,6 +125,10 @@ fabric.properties
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
+### Metals Bloop ###
+.bloop/
+.metals/
+
 # Local History for Visual Studio Code
 .history/
 
