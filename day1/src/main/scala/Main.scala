@@ -2,7 +2,7 @@ package code
 
 @main
 def run(): Unit = {
-  val reader = scala.io.Source.fromFile("input.txt")
+  val reader = scala.io.Source.fromFile("./day1/src/main/resources/input.txt")
   val (odds, evens) = reader.getLines()
     .flatMap(l => l.split("\\s+"))
     .zipWithIndex.partition(_._2 % 2 != 0)
