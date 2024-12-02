@@ -1,4 +1,4 @@
-package code
+package main.scala
 
 @main
 def run(): Unit = {
