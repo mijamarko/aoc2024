@@ -6,8 +6,8 @@ import common.getInput
 @main
 def run(): Unit =
   val input = getInput("day3")
-  println(pt1(input))
-  println(pt2(input))
+  println(pt1(input.mkString))
+  println(pt2(input.mkString))
 
 val test  = """xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))""" //161
 val test2 = """xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"""
