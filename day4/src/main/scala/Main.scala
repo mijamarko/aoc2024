@@ -27,16 +27,20 @@ def getPossibleCombinations(in: List[String]): List[String] =
     i <- 0 to in.head.length
     j <- 0 to in.length
     ltr =
-      try Success(List(in(j)(i), in(j)(i + 1), in(j)(i + 2), in(j)(i + 3)).mkString)
+      // try Success(List(in(j)(i), in(j)(i + 1), in(j)(i + 2), in(j)(i + 3)).mkString)
+      try Success(in(j).substring(i, i + 4))
       catch case e: Throwable => Failure(e)
     rtl =
-      try Success(List(in(j)(i), in(j)(i - 1), in(j)(i - 2), in(j)(i - 3)).mkString)
+      // try Success(List(in(j)(i), in(j)(i - 1), in(j)(i - 2), in(j)(i - 3)).mkString)
+      try Success(in(j).substring(i - 4, i))
       catch case e => Failure(e)
     up =
-      try Success(List(in(j)(i), in(j - 1)(i), in(j - 2)(i), in(j - 3)(i)).mkString)
+      // try Success(List(in(j)(i), in(j - 1)(i), in(j - 2)(i), in(j - 3)(i)).mkString)
+      try Success(in.drop(j).take(4).map(_(i)).reverse.mkString)
       catch case e => Failure(e)
     down =
-      try Success(List(in(j)(i), in(j + 1)(i), in(j + 2)(i), in(j + 3)(i)).mkString)
+      // try Success(List(in(j)(i), in(j + 1)(i), in(j + 2)(i), in(j + 3)(i)).mkString)
+      try Success(in.drop(j).take(4).map(_(i)).mkString)
       catch case e => Failure(e)
     topr =
       try Success(List(in(j)(i), in(j - 1)(i + 1), in(j - 2)(i + 2), in(j - 3)(i + 3)).mkString)
